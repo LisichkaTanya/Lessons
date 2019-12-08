@@ -2,6 +2,7 @@ package Interfaces;
 
 public class Animal implements Interface {
     int id;
+
     public Animal (int id){
         this.id = id;
     }
