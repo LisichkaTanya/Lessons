@@ -12,7 +12,7 @@ public class ReadFromFile {
         File file = new File(path);
         Scanner scanner = new Scanner(file);
         String line = scanner.nextLine(); //читаем нашу строку, теперь надо каждое число отдельно
-        String[] numbersString = line.split(" ");
+        String[] numbersString = line.split(" "); //вставили пробел как индикатор разделителя между цифрами
         System.out.println(Arrays.toString (numbersString));
         int[] numbersInt= new int[3];
         int counter = 0;
@@ -20,6 +20,6 @@ public class ReadFromFile {
             numbersInt[counter++] = Integer.parseInt(num);
         }
         System.out.println(Arrays.toString(numbersInt));
-        scanner.close();
+        scanner.close(); //метод закрывает все файлы, чтобы не тратить память компьютера
     }
 }

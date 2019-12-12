@@ -1,4 +1,4 @@
-package WorkWithFile;
+package WorkWithFile; // чтение из файла
 
 import java.io.File;
 import java.io.FileNotFoundException;
