@@ -1,23 +1,22 @@
 package Tasks;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+
 public class TestAll {
-    public static void main(String[] args) throws Exception {
-        System.out.println( min(-20, -10) );
-        System.out.println( min(-20, -10, -30, -40) );
-        System.out.println( min(-20, -10, -30, 40) );
-    }
+    public static void main(String[] args) throws java.io.IOException
+    {
+        FileInputStream input = new FileInputStream("C:\\Users\\Лисичка\\Documents\\data.jpg");
+        FileOutputStream output = new FileOutputStream("C:\\Users\\Лисичка\\Documents\\result.jpg");
 
-    public static int min(int a, int b, int c, int d) {
-        if (min(a,b) < min(c,d))
-            return min(a,b);
-        else
-            return min(c,d);
-    }
+        while (input.available() > 0)
+        {
+            int data = input.read();
+            System.out.println(data);
+            output.write(data);
+        }
 
-    public static int min(int a, int b) {
-        if (a < b)
-            return a;
-        else
-            return b;
+        input.close();
+        output.close();
     }
 }
