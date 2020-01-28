@@ -4,10 +4,10 @@ package Tasks.level03;
  */
 public class Lesson12Task00 {
     public static void main(String[] args) {
-        System.out.println(method(11111));
+        System.out.println(solution(11111));
     }
 
-    private static int method(int num) {
+    private static int solution (int num) {
         int sum = 0;
         while (num != 0) {
             sum = sum + num % 10;
@@ -17,7 +17,7 @@ public class Lesson12Task00 {
     }
 }
 
-    /* 21.01.2020 написала сама
+    /* 21.01.2020 написала без подсказок
     private static void solution(int digit){
         int sto = digit/100;
         System.out.println(sto);
