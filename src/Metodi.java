@@ -19,8 +19,11 @@ public class Metodi {
     }
 }
 class Person{
+    // поля
     String name;
     int age;
+
+    //методы
     void speak(){  //метод с пустыми параметрами, то есть в скобках () ничего нет
         System.out.println("Меня зовут "+name+" и мне "+age+" лет.");
     }
