@@ -1,6 +1,7 @@
 package Tasks;
 /* 15.12.2019
 Создать таблицу умножения размером 10*10 и вывести на экран
+  смотри Lesson10Task05
  */
 public class MultiplicationTable {
     public static void main(String[] args) {
