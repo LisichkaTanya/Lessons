@@ -3,7 +3,6 @@ package Tasks.level04;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
 
 /*
 Давайте найдем середину, а точнее — среднее число среди троицы целых чисел типа int.
@@ -16,22 +15,23 @@ public class Lesson16Task02 {
         int a = Integer.parseInt(reader.readLine());
         int b = Integer.parseInt(reader.readLine());
         int c = Integer.parseInt(reader.readLine());
-
-        int[] medium = {a,b,c} ;
-        Arrays.sort(medium);
-        System.out.println(medium[1]);
+        findMedium(a,b,c);
+        /*
+        можно сделать через массив и метод .sort()
+         */
+//        int[] medium = {a,b,c} ;
+//        Arrays.sort(medium);
+//        System.out.println(medium[1]);
     }
 
-//    public static void findMedium(int a, int b, int c) {
-//        if ((a==b) && (b==c)) System.out.println(b);
-//        int max = Math.max(a, b);
-//        if (max < c) max = c;
-//
-//        int min = Math.min(a, b);
-//        if (min > c) min = c;
-//
-//        if ((a > min) && (a < max)) System.out.println(a);
-//        if ((b > min) && (b < max)) System.out.println(b);
-//        if ((c > min) && (c < max)) System.out.println(c);
-//    }
+    public static void findMedium(int a, int b, int c) {
+        int med;
+        if ((a==b) && (b==c)) med = b;
+        int max = Math.max(a, b);
+        if (max < c) max = c;
+        int min = Math.min(a, b);
+        if (min > c) min = c;
+        med = a + b + c - min - max;
+        System.out.println("Medium number is: "+ med);
+   }
 }

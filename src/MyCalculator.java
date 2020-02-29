@@ -6,27 +6,33 @@ public class MyCalculator {
         Scanner scanner = new Scanner(System.in);
 
         while (true){
-            System.out.println("Введите значения для вычисления. Пример: \"2 + 2\"");
+            System.out.println("Enter the values to calculate. For example: \"2+2\"");
             String string = scanner.nextLine();
             calculate(string);
-            System.out.println("Do you want exit calculator? Write: yes/no");
+            System.out.println("Do you want to exit calculator? Write: y/n");
         String exit = scanner.nextLine();
-        if (exit.equals("yes")) break;
+        if (exit.equals("y")) break;
         else continue;
         }
     }
-    public static void calculate (String s){
+    public static void calculate (String s)  {
+        String actionSign = " ";
+        if (s.matches(".+\\+.+")) actionSign = "+";
+        if (s.matches(".+-.+")) actionSign = "-";
+        if (s.matches(".+\\*.+")) actionSign = "*";
+        if (s.matches(".+\\/.+")) actionSign = "/";
+        if (s.matches(".+\\^.+")) actionSign = "^";
+
         double result = 0;
-        String[] a = s.split(" ");
+        String[] a = s.split("(\\+|-|\\*|\\/|\\^)");
+        System.out.println(Arrays.toString(a));
         double first = Double.parseDouble(a[0]);
-        double second = Double.parseDouble(a[2]);
-        if (a[1].equals("+")) result = first + second;
-        if (a[1].equals("-")) result = first - second;
-        if (a[1].equals("*")) result = first * second;
-        if (a[1].equals("/")) result = first / second;
-        if (a[1].equals("^")) result = Math.pow(first, second);
-        //s.matches("\\d+ (\\+|-|\\*|/|^) \\d+");
-        //System.out.println(Arrays.toString(a));
+        double second = Double.parseDouble(a[1]);
+        if (actionSign.equals("+")) result = first + second;
+        if (actionSign.equals("-")) result = first - second;
+        if (actionSign.equals("*")) result = first * second;
+        if (actionSign.equals("/")) result = first / second;
+        if (actionSign.equals("^")) result = Math.pow(first, second);
         System.out.println(" = " + result);
     }
 }
