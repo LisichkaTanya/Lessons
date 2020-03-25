@@ -9,7 +9,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class Lesson12Task05 {
+public class Lesson12Task05Moneybox {
     public static void main(String[] args) throws IOException {
         int moneybox = 0;
         int sum = 0;
