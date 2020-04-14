@@ -12,7 +12,7 @@ public class Wildcard {
         test(listOfAnimal);
     }
     public static void test (List<? extends Animal>list){ //мы поставили <?extends Animal> так как полиморфизм здесь не работает
-                                               //значит в этом List будут Animal и все его потомки (т.е. те кто ниже)
+                                               //значит в этом List будут Animal и все его потомки (т.е. те кто ниже по иерархии)
         for (Animal animal: list){
             System.out.println(animal);
         }

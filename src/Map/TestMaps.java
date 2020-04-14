@@ -17,6 +17,11 @@ public class TestMaps {
         System.out.println();
         testMap(treeMap);
     }
+
+    /**
+     * Этот метод добавляет в наши map данные, вне зависимости какой конкретно у нас map
+     * @param map сюда мы кладем наш объект - hashMap, linkedHashMap или treeMap
+     */
     public static void testMap (Map<Integer, String> map){
         map.put(12, "Bob");
         map.put(59, "Tom");
