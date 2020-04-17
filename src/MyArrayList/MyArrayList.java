@@ -1,8 +1,8 @@
 package MyArrayList;
 
-import java.util.Arrays;
+import java.util.*;
 
-public class MyArrayList<E>  {
+public class MyArrayList {
     private Object[] elementData;
     private static final int MIN_CAPACITY = 3;
     private static final Object[] ELEMENT_DATA = new Object[MIN_CAPACITY];
@@ -20,22 +20,6 @@ public class MyArrayList<E>  {
             elementData = Arrays.copyOf(elementData, size+1);
         }
     }
-
-    public Object getValue(int index){
-        return elementData[index];
-    }
-
-//    public void sort (){
-//        for (int out = size-1; out >=1; out--){
-//            for (int in = 0; in < out; in++){
-//                if (getValue(in) > getValue(in+1)){
-//                    Object variable = elementData[in];
-//                    elementData[in] = elementData[in+1];
-//                    elementData[in+1] = variable;
-//                }
-//            }
-//        }
-//    }
 
     public void remove(int index){
         if (index <= size){
@@ -56,13 +40,27 @@ public class MyArrayList<E>  {
         this.elementData = temp;
     }
 
+    public Object get(int index) {
+        if (index > size) {
+            return "Have no this index";
+        }
+        return elementData[index];
+
+    }
+
+    public int size() {
+        return size;
+    }
+
     @Override
     public String toString() {
         for (int i = 0; i < size; i++){
             System.out.print(elementData[i] + " ");
         }
         return "";
-//        return "MyArrayList = " + Arrays.toString(elementData) +
-//                "\nSize = " + size;
     }
+
+//    public void sort(Comparator c){
+//        Arrays.sort(elementData, 0, size, c);
+//    }
 }
