@@ -2,7 +2,7 @@ package MyArrayList;
 
 import java.util.*;
 
-public class MyArrayList {
+public class MyArrayList<E> {
     private Object[] elementData;
     private static final int MIN_CAPACITY = 3;
     private static final Object[] ELEMENT_DATA = new Object[MIN_CAPACITY];
