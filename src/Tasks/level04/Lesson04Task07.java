@@ -17,8 +17,14 @@ public class Lesson04Task07 {
     public static void main(String[] args) throws Exception {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         int i = Integer.parseInt(reader.readLine());
-        if ((i < 400) && (i % 4 == 0)) System.out.println("Количество дней в году: 366");
-        else if (i % 400 == 0) System.out.println("Количество дней в году: 366");
-        else System.out.println("Количество дней в году: 365");
+        if (i % 100 != 0 && i % 4 == 0 || i % 400 == 0) {
+            System.out.println("Количество дней в году: 366");
+        } else {
+            System.out.println("Количество дней в году: 365");
+        }
+
+//        if ((i < 400) && (i % 4 == 0)) System.out.println("Количество дней в году: 366");
+//        else if (i % 400 == 0) System.out.println("Количество дней в году: 366");
+//        else System.out.println("Количество дней в году: 365");
         }
     }
