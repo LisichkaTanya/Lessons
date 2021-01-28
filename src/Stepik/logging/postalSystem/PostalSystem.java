@@ -15,7 +15,7 @@ public class PostalSystem {
 
         Inspector inspector = new Inspector();
         Spy spy = new Spy(logger);
-        Thief thief = new Thief(10000);
+        Thief thief = new Thief(10_000);
         MailService[] variousWorkers = new MailService[]{spy, thief, inspector};
         UntrustworthyMailWorker worker = new UntrustworthyMailWorker(variousWorkers);
 
